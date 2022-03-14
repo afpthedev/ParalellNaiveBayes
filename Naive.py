@@ -2,7 +2,7 @@
 import pandas as pd
 
 # csv dosyamızı okuduk.
-data = pd.read_csv('Iris.csv')
+data = pd.read_csv('Databases/Iris.csv')
 
 # Bağımlı Değişkeni ( species) bir değişkene atadık
 species = data.iloc[:,-1:].values
