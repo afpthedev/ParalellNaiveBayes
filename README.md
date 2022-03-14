@@ -17,5 +17,6 @@ Week 4:
     - Presenatation for Naive Bayes at Distrubuted Systems Lesson/Spring 2022
 
 ! İf y're working from vusial studio code.  You must install modules:
+
     -Sklern: pip install -U scikit-learn
     - Pandas : pip install pandas
