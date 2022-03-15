@@ -6,7 +6,7 @@ Week 1:
 
 Week 2: 
 
-    - Paralell version Naive Bayes PYTHON code-- 
+    - Parallel version Naive Bayes PYTHON code-- 
 
 Week 3: 
 
