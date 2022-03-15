@@ -1,4 +1,4 @@
-# Paralel Naive Bayes PYTHON code for Distrubuted Systems Lesson/Spring 2022
+# Parallel Naive Bayes PYTHON code for Distrubuted Systems Lesson/Spring 2022
 
 Week 1: 
 
