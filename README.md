@@ -18,5 +18,5 @@ Week 4:
 
 ! İf y're working from vusial studio code.  You must install modules:
 
-    -Sklern: pip install -U scikit-learn
+    - Sklearn: pip install -U scikit-learn
     - Pandas : pip install pandas
