@@ -4,7 +4,7 @@ import pandas as pd
 # csv dosyamızı okuduk.
 data = pd.read_csv('ParalellNaiveBayes\Databases\Iris.csv')
 
-# Bağımlı Değişkeni ( species) bir değişkene atadık
+# Bağımlı Değişkeni (species) bir değişkene atadık
 species = data.iloc[:,-1:].values #Commit 4 for change something  x"
 
 # Veri kümemizi test ve train şekinde bölüyoruz
@@ -37,5 +37,6 @@ print(cm)
 # Başarı Oranı
 from sklearn.metrics import accuracy_score
 accuracy = accuracy_score(y_test, result)
+
 # Sonuç : 0.96
 print(accuracy)
