@@ -1,0 +1,23 @@
+İnönü Üniversitesi
+Bilgisayar Mühendisliği Bölümü
+2021 – 2022 Öğretim Yılı Bahar Dönemi
+420 Dağıtık Sistemler
+Proje Aşama Rapor
+Ders Sorumlusu Dr. Öğr. Üyesi Ahmet Arif AYDIN
+Öğrenci(ler) Ahmet Faruk PALA
+Proje Tanımı Naive Bayes’in hem paralel hemde seri halde karşılaştırılmalı
+incelenmesi
+Aşama Tanımı Naive Bayes’in python üzerinde seri kodun yazılması ve veri
+üzerinde test edilmesi
+AÇIKLAMA
+1) Veri kümemizi okumak için ki,csv uzantılı veri kümesi kullanmaktayım, pandas
+kütüphanesinden read_csv komutunu çağırdım.
+2) Bir adet bağımlı değişken atadık ki bu tür adlı bağımlı değişken olacak bu bağımlı
+değişken bu olayda dikkat edeceğimiz ve asıl sınıflandırma yapacağımız değişken
+kümesidir. Aynı Borsa veri kümesinde kapanış fiyatını(Close Value) almamız gibi
+3) Veri kümesinin Train(eğitim) ve Test olarak bölünmesi ki oran 0.33(%33) dür
+4) Ondalıklı veri olduğundan GaussioaNB kullanılmış ve tanıttım.
+5) Makinenin öğretilmesi için fit fonksiyonunu kullandım.
+6) Sınıfılandırma modelinin başarısını ölçmek için Karmaşıklık matrisi kullandım.
+Tahmin Modellerindeki SMA gibi.
+7) Ve son olarak başarı oranının yazdırdım.

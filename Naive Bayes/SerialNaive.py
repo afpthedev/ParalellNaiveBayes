@@ -5,7 +5,7 @@ import pandas as pd
 data = pd.read_csv('ParalellNaiveBayes\Databases\Iris.csv')
 
 # Bağımlı Değişkeni ( species) bir değişkene atadık
-species = data.iloc[:,-1:].values #Commit 4 for change something  
+species = data.iloc[:,-1:].values #Commit 4 for change something  x"
 
 # Veri kümemizi test ve train şekinde bölüyoruz
 from sklearn.model_selection import train_test_split
