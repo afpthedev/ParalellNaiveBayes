@@ -2,9 +2,10 @@
 import pandas as pd
 
 # csv dosyamızı okuduk.
-data = pd.read_csv('ParalellNaiveBayes\Databases\Iris.csv')
+data = pd.read_csv('ParalellNaiveBayes\Databases\General\Iris.csv')
 
 # Bağımlı Değişkeni (species) bir değişkene atadık
+# 4 Finans için  -1 ise Irıs veritabanı için
 species = data.iloc[:,-1:].values #Commit 4 for change something  x"
 
 # Veri kümemizi test ve train şekinde bölüyoruz
