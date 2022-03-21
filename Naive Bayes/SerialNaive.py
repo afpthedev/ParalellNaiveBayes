@@ -8,9 +8,9 @@ data = pd.read_csv('C:\Repos\ParalellNaiveBayes\Databases\General\Iris.csv')
 # 4 Finans için  -1 ise Irıs veritabanı için
 species = data.iloc[:,-1:].values #Commit 4 for change something  x"
 
-# Veri kümemizi test ve train şekinde bölüyoruz
+# Veri kümemizi test ve train şeklinde bölüyoruz
 from sklearn.model_selection import train_test_split
-x_train, x_test, y_train, y_test = train_test_split(data.iloc[:,1:-1],species,test_size=0.33,random_state=0)
+x_train, x_test, y_train, y_test = train_test_split(data.iloc[:,1:-1],species,test_size=0.33,random_state=0.33)
 
 
 # GaussianNB sınıfını import ettik
@@ -19,7 +19,7 @@ x_train, x_test, y_train, y_test = train_test_split(data.iloc[:,1:-1],species,te
 # BernoulliNB : Tahmin edeceğiniz veri veya kolon ikili ise ( Evet/Hayır , Sigara içiyor/ İçmiyor vs.)
 # MultinomialNB : Tahmin edeceğiniz veri veya kolon nominal ise ( Int sayılar )
 # Duruma göre bu üç sınıftan birini seçebilirsiniz. Modelin başarı durumunu etkiler.
-from sklearn.naive_bayes import GaussianNB
+from sklearn.naive_bayes import BernoulliNB, GaussianNB, MultinomialNB
 
 # GaussianNB sınıfından bir nesne ürettik
 gnb = GaussianNB()
@@ -39,5 +39,7 @@ print(cm)
 from sklearn.metrics import accuracy_score
 accuracy = accuracy_score(y_test, result)
 
-# Sonuç : 0.96
+# Sonuç: 0.96 GaussianNB
+# Sonuç: 0.3 BernoulliNB
+# Sonuç: 0.7  MultinomalNB
 print(accuracy)
