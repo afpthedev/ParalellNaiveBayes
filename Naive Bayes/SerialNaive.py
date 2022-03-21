@@ -2,11 +2,11 @@
 import pandas as pd
 
 # csv dosyamızı okuduk.
-data = pd.read_csv('C:\Repos\ParalellNaiveBayes\Databases\Finance\LOGO.IS.csv')
+data = pd.read_csv('C:\Repos\ParalellNaiveBayes\Databases\General\Iris.csv')
 
 # Bağımlı Değişkeni (species) bir değişkene atadık
 # 4 Finans için  -1 ise Irıs veritabanı için
-species = data.iloc[:,3:].values #Commit 4 for change something  databases"
+species = data.iloc[:,-1:].values #Commit 4 for change something  x"
 
 # Veri kümemizi test ve train şekinde bölüyoruz
 from sklearn.model_selection import train_test_split
@@ -35,9 +35,9 @@ from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test,result)
 print(cm)
 
-# Başarı Oranı
+
 from sklearn.metrics import accuracy_score
 accuracy = accuracy_score(y_test, result)
 
-# Sonuç : 0.96 Iris için 
+# Sonuç : 0.96
 print(accuracy)
