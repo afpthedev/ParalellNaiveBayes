@@ -13,7 +13,7 @@ ds.count()
 # Create a Dataset of Arrow records.
 ds = ray.data.from_items([{"col1": i, "col2": str(i)} for i in range(10000)])
 # -> Dataset(num_blocks=200, num_rows=10000, schema={col1: int64, col2: string})
-
+# AFP
 ds.show(5)
 # -> {'col1': 0, 'col2': '0'}
 # -> {'col1': 1, 'col2': '1'}
