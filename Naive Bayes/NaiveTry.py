@@ -1,28 +1,26 @@
-import pandas_datareader as pdr
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
-from sklearn.naive_bayes import BernoulliNB
+import ray
 
-df = pdr.get_data_yahoo("LOGO.IS", "2010-11-01", "2020-11-01")
+# Create a Dataset of Python objects.
+ds = ray.data.range(10000)
+# -> Dataset(num_blocks=200, num_rows=10000, schema=<class 'int'>)
 
-df["Diff"] = df.Close.diff()
-df["SMA_2"] = df.Close.rolling(2).mean()
-df["Force_Index"] = df["Close"] * df["Volume"]
-df["y"] = df["Diff"].apply(lambda x: 1 if x > 0 else 0).shift(-1)
-df = df.drop(
-   ["Open", "High", "Low", "Close", "Volume", "Diff", "Adj Close"],
-   axis=1,
-).dropna()
-print(df)
-X = df.drop(["y"], axis=1).values
-y = df["y"].values
-X_train, X_test, y_train, y_test = train_test_split(
-   X,
-   y,
-   test_size=0.2,
-   shuffle=False,
-)
-clf = BernoulliNB()
-clf.fit(X_train,y_train,)
-y_pred = clf.predict(X_test)
-print(accuracy_score(y_test, y_pred))
+ds.take(5)
+# -> [0, 1, 2, 3, 4]
+
+ds.count()
+# -> 10000
+
+# Create a Dataset of Arrow records.
+ds = ray.data.from_items([{"col1": i, "col2": str(i)} for i in range(10000)])
+# -> Dataset(num_blocks=200, num_rows=10000, schema={col1: int64, col2: string})
+
+ds.show(5)
+# -> {'col1': 0, 'col2': '0'}
+# -> {'col1': 1, 'col2': '1'}
+# -> {'col1': 2, 'col2': '2'}
+# -> {'col1': 3, 'col2': '3'}
+# -> {'col1': 4, 'col2': '4'}
+
+ds.schema()
+# -> col1: int64
+# -> col2: string

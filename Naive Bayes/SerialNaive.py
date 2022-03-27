@@ -44,6 +44,7 @@ accuracy = accuracy_score(y_test, result)
 # Sonuç: 0.96 GaussianNB
 # Sonuç: 0.3 BernoulliNB
 # Sonuç: 0.7  MultinomalNB
+    
 print(accuracy)
 plt.plot(result)
 plt.show()
