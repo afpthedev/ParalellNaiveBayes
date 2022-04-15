@@ -1,20 +1,15 @@
-# Yazar/author: Ahmet Faruk PALA
-
-
 import random
 import time
 from multiprocessing import Pool
 import os
-
 from mpire import WorkerPool
-import ray
-import matplotlib as plot
+from joblib import Parallel, delayed
 
 
 # Standart Fonsiyon/Standart Function
 def sum_square(number):
     s = 0
-    for i in range(10):
+    for i in range(number):
         s = i * i
     return s
 
@@ -27,9 +22,7 @@ def sum_square_with_mp(numbers):
     p.close()
     p.join()
     end_time = time.time() - start_time
-    print(
-        f"Processing {len(numbers)} numbers took {end_time} time using multiprocessing."
-    )
+    print(f"Processing {len(numbers)} numbers took {end_time} time using multiprocessing.")
 
 
 # Serial Processing
@@ -42,6 +35,12 @@ def sum_square_no_mp(numbers):
     print(
         f"Processing {len(numbers)} numbers took {end_time} time using serial processing."
     )
+
+def sum_square_with_joblib(numbers):
+    results = \
+    Parallel(n_jobs=-1, backend='multiprocessing', verbose=1)\
+    (delayed(sum_square))
+    print(results)
 
 
 # mpire tools
@@ -68,10 +67,12 @@ def sum_square_with_ray(numbers):
     )
     return end_time
 
-
 if __name__ == "__main__":
-    number = range(100000)
+    number = range(1200)
+    number1 = 12000
     sum_square_with_mp(number)
     sum_square_no_mp(number)
-    # sum_square_with_mpire(number)
-    sum_square_with_ray(number)
+    #sum_square_with_mpire(number)
+    #sum_square_with_ray(number)
+    sum_square_with_joblib(number1)
+
