@@ -34,7 +34,7 @@ def sum_square_no_mp(numbers):
     end_time = time.time() - start_time
     print(
         f"Processing {len(numbers)} numbers took {end_time} time using serial processing."
-    )#
+    )
 
 def sum_square_with_joblib(numbers):
     Parallel(n_jobs=1)(delayed(sum_square)for i in range (numbers))
