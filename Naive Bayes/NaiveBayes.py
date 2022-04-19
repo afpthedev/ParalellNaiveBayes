@@ -44,12 +44,13 @@ class paralell:
         gnb = GaussianNB()
         gnb.fit(x_train, y_train.ravel())
         result = gnb.predict(x_test)
+        print(result)
 
     # GaussianNB class in Serial
     def naive_bayes_mp(data):
         start_time = time.time()
         p = Pool()
-        result  = p.map(naive_bayes_gaus,data)
+        result  = p.map(serial.naive_bayes_multi,data)
         p.close()
         p.join()
         end_time = time.time() - start_time
@@ -73,8 +74,8 @@ class paralell:
 
 
 #Main Fonksiyon
-
-data = pd.read_csv('C:\Repos\ParalellNaiveBayes\Databases\General\Iris.csv')
-
+if __name__ == '__main__':
+    data = pd.read_csv('C:\Repos\ParalellNaiveBayes\Databases\General\Iris.csv')
+    paralell.naive_bayes_mp(data)
 
 
