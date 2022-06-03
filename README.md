@@ -17,14 +17,14 @@
 
 # Performances Plots : 
 <img src="/pictures/Figure 2022-05-22 010109.png" alt="Performances of Serial&Native Naive Bayes "/>
+<img src="/pictures/Figure 2022-05-22 073450.png" alt="Performances of Serial&Native Naive Bayes "/>
+<img src="/pictures/Figure 2022-05-22 155809.png" alt="Performances of Serial&Native Naive Bayes "/>
 
 
 # Short Cuts
 os.py : Gives cpu numbers 
 
-
-
-- Medium Links (Turkish): 
+# Medium Link (Turkish): 
 - https://medium.com/@SadeceFaruk/naive-bayes-s%C4%B1n%C4%B1fland%C4%B1rma-nas%C4%B1l-paralle%C5%9Ftirilir-7e8607735c22
 
 # Maked By Senanur Paksoy & Ahmet Faruk PALA 
