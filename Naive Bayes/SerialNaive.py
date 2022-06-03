@@ -8,11 +8,9 @@ data = pd.read_csv('C:\Repos\ParalellNaiveBayes\Databases\General\Iris.csv')
 # Bağımlı Değişkeni (species) bir değişkene atadık
 # 4 Finans için  -1 ise Irıs veritabanı için
 species = data.iloc[:,-1:].values
-
 # Veri kümemizi test ve train şeklinde bölüyoruz
 from sklearn.model_selection import train_test_split
 x_train, x_test, y_train, y_test = train_test_split(data.iloc[:,1:-1],species,test_size=0.33,random_state=0)
-
 
 from sklearn.naive_bayes import BernoulliNB, GaussianNB, MultinomialNB
 

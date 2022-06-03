@@ -2,14 +2,13 @@ import random
 import time
 from multiprocessing import Process,Pool
 import os
-from mpire import WorkerPool
+from mpire import WorkerPool#
 from joblib import Parallel, delayed
-#import ray 
+import ray 
 # csv dosyalarını okumak için
 import pandas as pd
 import matplotlib.pyplot as plt
-from dask_ml import datasets
-import untitled0
+
 
 def pool_naive(data):
     number = range(151)
@@ -20,7 +19,6 @@ def pool_naive(data):
     p.join()
     end_time = time.time() - start_time
     print(f"Processing {len(data)} numbers took {end_time} time using Pool Library multiprocessing.")
-
 
 def naive_bayes(data):
     start_time = time.time()
@@ -33,7 +31,6 @@ def naive_bayes(data):
     from sklearn.naive_bayes import BernoulliNB, GaussianNB, MultinomialNB
      # GaussianNB sınıfından bir nesne ürettik
     gnb = GaussianNB()   
-    
     # Makineyi eğitiyoruz. 
     #Ravel diziyi düzlemselleştirir.
     gnb.fit(x_train, y_train.ravel())   
@@ -49,7 +46,7 @@ def naive_bayes(data):
     end_time = time.time() - start_time
     print(f"Processing {len(data)} numbers took {end_time} time using serial processing.")
     
-   # Multiprocessing using Process LİB
+# Multiprocessing using Process LİB
 def process_naive(data):
     number = range(151)
     start_time = time.time()
@@ -63,23 +60,18 @@ def process_naive(data):
 
 def naive_bayes_with_dask(data):
     from dask_ml import datasets
-    from dask_ml.naive_bayes import GaussianNB as gnb1
-    start_time = time.time()
-    X, y = datasets.make_classification(chunks=50)
-    print(datasets)
-    gnb1 = gnb1()
-    gnb1.fit(X,y)
-    end_time = time.time() - start_time
-    print(f"Processing  numbers took {end_time} time using multiprocessing.")
+    from dask_mk.naive_bayes import GaussianNB as gnb1
+    X, y = data.make_classification(chunks=50)
+    gnb = gnb1()
+    gnb.fit(X,y)
     
     
     
 
-if __name__ == "__main__":
-    #csv dosyamızı okuduk.
+if __name__ == '__main__':
+    # csv dosyamızı okuduk.
     data = pd.read_csv('C:\Repos\ParalellNaiveBayes\Databases\General\Iris.csv')
-    process_naive(data)
-    naive_bayes(data)
+    #process_naive(data)
+    #naive_bayes(data)
     #pool_naive(data)
-    print(naive_bayes)
     naive_bayes_with_dask(data)
