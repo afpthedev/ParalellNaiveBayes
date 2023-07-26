@@ -27,4 +27,4 @@ os.py : Gives cpu numbers
 # Medium Link (Turkish): 
 - https://medium.com/@SadeceFaruk/naive-bayes-s%C4%B1n%C4%B1fland%C4%B1rma-nas%C4%B1l-paralle%C5%9Ftirilir-7e8607735c22
 
-# Maked By Senanur Paksoy & Ahmet Faruk PALA 
+# Maked By  Ahmet Faruk PALA 
